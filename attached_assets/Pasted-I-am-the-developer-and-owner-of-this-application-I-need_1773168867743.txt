@@ -1,0 +1,98 @@
+I am the developer and owner of this application. I need a proper role-based access control system so that I can use all features of the platform without paying for subscriptions.
+
+Please implement a secure permission system with the following roles:
+
+1. owner
+2. admin
+3. user
+
+The system must work like this:
+
+OWNER
+The owner account must have full unrestricted access to every feature in the application. This includes all premium tools, AI features, analytics, mock tests, writing analysis, speaking analysis, score prediction, admin panel, and all future features. The owner must never be blocked by subscription or payment checks.
+
+ADMIN
+Admin accounts should have high-level permissions. They must be able to access the admin panel, manage users, upload content, manage questions, manage podcasts, and view analytics. Admins may optionally bypass premium restrictions as well.
+
+USER
+Normal users should follow the pricing model:
+- Free plan: limited features
+- Premium plan: full features only when subscription status is active
+
+-------------------------------------------------
+
+DATABASE REQUIREMENTS
+
+Add these fields to the users table:
+
+role (owner, admin, user)
+subscription_status (free, active, expired)
+premium_override (boolean)
+
+-------------------------------------------------
+
+ACCESS CONTROL LOGIC
+
+Access to premium features must follow this logic:
+
+IF role = owner
+→ allow full access to everything
+
+ELSE IF role = admin
+→ allow admin access and optionally premium tools
+
+ELSE IF premium_override = true
+→ allow premium features
+
+ELSE IF subscription_status = active
+→ allow premium features
+
+ELSE
+→ restrict to free plan
+
+-------------------------------------------------
+
+OWNER ACCOUNT CREATION
+
+Automatically create one owner account when the system initializes.
+
+Example owner credentials (can be changed later):
+
+email: owner@bandboost.ai
+password: securepassword
+
+Set this account with:
+
+role = owner
+subscription_status = active
+premium_override = true
+
+This account must bypass all paywalls and subscription checks.
+
+-------------------------------------------------
+
+MIDDLEWARE
+
+Create middleware that checks user role before checking subscription status. Owner access must always override payment restrictions.
+
+-------------------------------------------------
+
+ADMIN PANEL
+
+The admin panel must allow the owner to:
+
+- Promote users to admin
+- Grant premium access manually
+- View all users
+- Manage content
+- Manage subscriptions
+
+-------------------------------------------------
+
+IMPORTANT
+
+The pricing page should still exist for normal users.
+
+But the owner account must always access all premium features without payment.
+
+Ensure this system is secure and scalable for production.

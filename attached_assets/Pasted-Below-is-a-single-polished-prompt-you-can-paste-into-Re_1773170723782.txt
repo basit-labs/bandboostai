@@ -1,0 +1,363 @@
+Below is a single polished prompt you can paste into Replit Agent.
+It combines all your requirements in one place:
+
+free vs premium restrictions
+
+100 practice items per module
+
+randomized sessions
+
+realistic exam features
+
+timers and analytics
+
+admin content management
+
+I cannot confirm your exact existing code structure, so the prompt asks Replit to modify the current project safely rather than rebuild everything.
+
+MASTER PROMPT FOR REPLIT (MODULE LIMITS + PREMIUM LOCK + REALISTIC PRACTICE)
+Modify the existing BandBoost AI exam preparation application with the following improvements.
+
+The platform prepares users for IELTS and PTE exams. Improve the practice system, add realistic exam features, and enforce free vs premium feature restrictions.
+
+-----------------------------------------------------
+
+MODULE STRUCTURE
+
+There are four core modules:
+
+Listening
+Reading
+Writing
+Speaking
+
+Each module must contain exactly 100 practice items.
+
+Database table: practice_questions
+
+Fields:
+
+id
+module_type (listening, reading, writing, speaking)
+difficulty_level (easy, medium, hard)
+question_text
+audio_url
+passage_text
+model_answer
+tags
+
+-----------------------------------------------------
+
+PRACTICE SESSION SYSTEM
+
+Users should not see all questions at once.
+
+Instead implement randomized practice sessions.
+
+Listening session → 10 questions
+Reading session → 10 questions
+Writing session → 5 prompts
+Speaking session → 5 prompts
+
+Each session randomly selects questions from the 100 question pool.
+
+Questions must not repeat in the same session.
+
+-----------------------------------------------------
+
+QUESTION RANDOMIZATION
+
+Create a smart randomization system.
+
+Selection priority:
+
+1. Questions answered incorrectly before
+2. Questions never attempted
+3. Questions answered correctly but long time ago
+
+Do not show the same question repeatedly in short time.
+
+-----------------------------------------------------
+
+FREE USER LIMITATIONS
+
+Implement subscription restrictions.
+
+Free users can only access:
+
+• First 10 items in each module
+• Limited daily practice sessions
+• Basic AI feedback only
+
+All other practice items must be locked.
+
+Display a lock icon for locked questions.
+
+If user clicks a locked item show upgrade prompt.
+
+-----------------------------------------------------
+
+PREMIUM USERS
+
+Premium subscribers must unlock:
+
+• All 100 questions per module
+• Unlimited practice sessions
+• Full AI scoring feedback
+• Mock exams
+• Advanced analytics
+• Prediction engine
+• Speaking pronunciation analysis
+
+-----------------------------------------------------
+
+SESSION LIMITS FOR FREE USERS
+
+Free users daily limits:
+
+Listening → 10 questions per day
+Reading → 10 questions per day
+Writing → 2 prompts per day
+Speaking → 2 prompts per day
+
+Premium users have no limits.
+
+-----------------------------------------------------
+
+REALISTIC EXAM FEATURES
+
+Add features to simulate real IELTS/PTE preparation.
+
+-----------------------------------------------------
+
+1. TIMER SYSTEM
+
+Each practice session should include a timer.
+
+Listening tasks → timed
+Reading tasks → timed
+Writing tasks → timed
+Speaking tasks → timed
+
+Add countdown timers.
+
+-----------------------------------------------------
+
+2. EXAM SIMULATION MODE
+
+Create a full exam simulation mode.
+
+Structure:
+
+Listening section
+Reading section
+Writing section
+Speaking section
+
+Users must complete sections sequentially.
+
+Timers should simulate real exam conditions.
+
+-----------------------------------------------------
+
+3. MISTAKE REVIEW SYSTEM
+
+Create a page showing:
+
+All incorrect answers
+AI explanations
+Correct answers
+Suggested practice
+
+Users should easily review mistakes.
+
+-----------------------------------------------------
+
+4. WEAK SKILL DETECTION
+
+Track user performance across skills.
+
+Detect weaknesses in:
+
+Listening accuracy
+Reading speed
+Writing grammar
+Speaking fluency
+
+Display a skill radar chart.
+
+-----------------------------------------------------
+
+5. PRACTICE HISTORY
+
+Users should see:
+
+Total questions attempted
+Accuracy rate
+Practice streak
+Improvement trend
+
+-----------------------------------------------------
+
+6. SPEAKING RECORDINGS
+
+Store speaking attempts.
+
+Allow users to:
+
+Replay recordings
+Compare attempts
+View improvement over time
+
+-----------------------------------------------------
+
+7. PERSONAL VOCABULARY LIST
+
+Extract new words from:
+
+Reading passages
+Listening transcripts
+Writing corrections
+
+Save them to user vocabulary list.
+
+-----------------------------------------------------
+
+8. ADAPTIVE DIFFICULTY
+
+Adjust difficulty automatically.
+
+If user accuracy > 80% increase difficulty.
+
+If accuracy < 50% reduce difficulty.
+
+-----------------------------------------------------
+
+DATABASE TABLES
+
+practice_questions
+practice_attempts
+user_progress
+mistake_reviews
+speaking_recordings
+vocabulary_items
+
+practice_attempts fields:
+
+user_id
+question_id
+module_type
+score
+ai_feedback
+attempt_count
+timestamp
+
+-----------------------------------------------------
+
+ADMIN PANEL
+
+Admins must be able to:
+
+Add questions
+Edit questions
+Delete questions
+Upload listening audio
+Upload reading passages
+Import bulk question sets
+
+Admin should also set difficulty level.
+
+-----------------------------------------------------
+
+IMPORTANT RULES
+
+Questions must be randomized.
+
+Free users must see locked content.
+
+Premium users unlock everything.
+
+Practice must be session-based, not infinite scrolling.
+
+-----------------------------------------------------
+
+EXPECTED RESULT
+
+Update the application so that:
+
+Each module has 100 questions
+Sessions randomly select questions
+Free users see locked content
+Premium users unlock everything
+Practice sessions are timed
+Exam simulation mode exists
+Mistake review and analytics work
+Admin can manage question bank
+Recommended Additional Realistic Features
+
+These will make your platform much more convincing as a real exam-prep app.
+
+1. AI Essay Band Estimator
+
+Evaluate writing according to IELTS rubric:
+
+Task response
+
+Coherence
+
+Lexical resource
+
+Grammar range
+
+Show estimated band score.
+
+2. Pronunciation Heatmap
+
+Highlight mispronounced words in speaking.
+
+Example feedback:
+
+Word: "environment"
+Pronunciation accuracy: 62%
+Suggested correction: /ɪnˈvaɪrənmənt/
+3. Reading Speed Tracker
+
+Measure:
+
+words per minute
+
+comprehension accuracy
+
+Then show progress graph.
+
+4. Weekly Study Report
+
+Send automated report:
+
+hours studied
+
+improvement
+
+weak skills
+
+5. Study Streak System
+
+Encourage daily practice with streak counter.
+
+6. Difficulty Ladder
+
+Questions should progress:
+
+easy → medium → hard.
+
+Important Tip
+
+Starting with 100 questions per module is actually a smart MVP strategy because it:
+
+keeps database manageable
+
+lets you test AI scoring
+
+makes analytics easier
+
+Later you can expand to 1000+ questions.

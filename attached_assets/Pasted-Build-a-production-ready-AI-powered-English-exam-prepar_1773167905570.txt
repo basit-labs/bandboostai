@@ -1,0 +1,548 @@
+Build a production-ready AI-powered English exam preparation platform called "BandBoost AI".
+
+The platform must help users prepare for IELTS and PTE exams by practicing Listening, Reading, Writing, and Speaking. The system must include AI-based feedback, personalized study plans, progress analytics, score prediction, mock tests, podcasts, and adaptive learning recommendations.
+
+The app must first be built as a mobile-first Progressive Web App (PWA) optimized for Android phones. The architecture must also support a future React Native mobile app capable of generating Android APK files using Expo EAS.
+
+The system must be scalable, modular, and production-ready.
+
+------------------------------------------------
+
+PRODUCT GOAL
+
+Create an intelligent exam preparation ecosystem where users can:
+
+Learn English through structured lessons
+Practice daily exam tasks
+Receive AI feedback
+Track progress
+Estimate exam readiness
+Predict likely exam scores
+Take realistic mock exams
+Improve weak skills with AI tutoring
+Follow a personalized study roadmap
+
+The system should be comparable in quality to modern language learning platforms.
+
+------------------------------------------------
+
+DEVELOPMENT STRATEGY
+
+Phase 1
+Build a mobile-first PWA.
+
+Phase 2
+Add AI scoring and analytics.
+
+Phase 3
+Add prediction engine and AI tutor.
+
+Phase 4
+Prepare React Native mobile app.
+
+Phase 5
+Enable Android APK build using Expo EAS.
+
+Architecture must support all phases without major rewrites.
+
+------------------------------------------------
+
+TECH STACK
+
+Frontend
+React with Next.js
+Tailwind CSS
+Mobile-first responsive UI
+PWA support
+Service workers
+Offline caching
+
+Backend
+Node.js
+Express or Next.js API routes
+
+Database
+PostgreSQL
+
+Authentication
+JWT sessions
+Role-based access
+
+Storage
+Audio recordings
+Podcast files
+User submissions
+
+AI services
+Speech-to-text
+Natural language processing
+Adaptive learning engine
+Score prediction engine
+Weak-skill detection
+Study plan generator
+
+Deployment
+Replit hosting
+GitHub repository
+Autoscale-ready
+
+------------------------------------------------
+
+PWA REQUIREMENTS
+
+Installable PWA
+Offline caching
+Mobile gestures
+App-style navigation
+Fast loading
+Home screen icon
+
+------------------------------------------------
+
+FUTURE MOBILE SUPPORT
+
+Design APIs reusable for React Native mobile app.
+
+Provide documentation explaining:
+
+React Native integration
+API reuse
+Expo mobile build process
+Android APK build using Expo EAS
+
+------------------------------------------------
+
+CORE PRODUCT FEATURES
+
+Landing Page
+
+Hero section
+Feature overview
+IELTS/PTE explanation
+Testimonials
+Pricing
+FAQ
+Signup/login buttons
+
+------------------------------------------------
+
+Authentication
+
+Signup
+Login
+Password recovery
+Role-based accounts
+
+Onboarding questions
+
+Exam type
+Current level
+Target score
+Exam date
+Weak skill
+Daily study time
+
+Generate personalized study plan.
+
+------------------------------------------------
+
+User Dashboard
+
+Predicted exam score
+Confidence level
+Daily tasks
+Streak counter
+Skill progress charts
+Weak skill alerts
+Recent activity
+Recommended next actions
+
+------------------------------------------------
+
+Daily Study Tasks
+
+Each day generate:
+
+Listening task
+Reading task
+Writing task
+Speaking task
+Vocabulary lesson
+Grammar challenge
+Podcast episode
+
+Track completion and streaks.
+
+------------------------------------------------
+
+LISTENING MODULE
+
+Podcast player
+Speed control
+Transcript toggle
+Vocabulary extraction
+
+Question types
+
+Multiple choice
+Fill blanks
+Note completion
+
+Provide result analysis.
+
+------------------------------------------------
+
+READING MODULE
+
+Reading passages
+Timed practice
+
+Question types
+
+Multiple choice
+True/False/Not Given
+Fill blanks
+Reorder paragraphs
+Match headings
+
+Provide explanations and analytics.
+
+------------------------------------------------
+
+WRITING MODULE
+
+Writing prompts
+Essay tasks
+Summary tasks
+
+Editor features
+
+Word counter
+Timer
+Autosave
+Revision history
+
+AI feedback must evaluate:
+
+Grammar
+Spelling
+Vocabulary diversity
+Sentence complexity
+Paragraph coherence
+Task relevance
+
+Show estimated practice score.
+
+------------------------------------------------
+
+SPEAKING MODULE
+
+Record voice
+Waveform display
+Save recordings
+Auto transcription
+
+Evaluate:
+
+Pronunciation
+Fluency
+Speech rate
+Pause frequency
+Grammar errors
+
+Task types
+
+Read aloud
+Repeat sentence
+Describe image
+Retell lecture
+Answer short question
+
+Allow replay and attempt comparison.
+
+------------------------------------------------
+
+PODCAST SYSTEM
+
+Podcast library
+Episode player
+Transcript
+Vocabulary extraction
+Shadowing practice
+
+------------------------------------------------
+
+VOCABULARY SYSTEM
+
+Flashcards
+Pronunciation audio
+Saved words
+Spaced repetition
+
+Grammar lessons
+Mini quizzes
+
+------------------------------------------------
+
+MOCK TEST SYSTEM
+
+Mini mocks
+Full IELTS mock
+Full PTE mock
+
+Exam-style interface
+Timers
+Section transitions
+
+Provide detailed score report.
+
+------------------------------------------------
+
+AI SCORING LOGIC
+
+Speaking scoring must evaluate:
+
+Pronunciation accuracy
+Fluency
+Speech speed
+Pause frequency
+Grammar correctness
+Vocabulary usage
+
+Writing scoring must evaluate:
+
+Grammar
+Spelling
+Vocabulary diversity
+Sentence complexity
+Coherence
+Task completion
+
+Scores must be labeled as practice estimates only.
+
+------------------------------------------------
+
+SCORE PREDICTION ENGINE
+
+Inputs:
+
+Listening accuracy
+Reading accuracy
+Writing score
+Speaking score
+Mock test scores
+Study consistency
+Performance trend
+
+Algorithm steps
+
+Normalize skill scores
+Apply weighted average
+Detect weak skills
+Calculate predicted score range
+Compute confidence level
+
+Example output
+
+Predicted IELTS score
+6.5 – 7.0
+
+Confidence
+Medium
+
+Weak skills
+Speaking fluency
+Writing coherence
+
+------------------------------------------------
+
+PRONUNCIATION ANALYZER
+
+Speech evaluation pipeline
+
+Step 1
+Speech to text conversion
+
+Step 2
+Compare spoken words with expected text
+
+Step 3
+Analyze phoneme alignment
+
+Step 4
+Measure speech speed
+
+Step 5
+Detect pauses and filler words
+
+Step 6
+Compute pronunciation accuracy
+
+Step 7
+Generate feedback suggestions
+
+------------------------------------------------
+
+QUESTION INTELLIGENCE SYSTEM
+
+Create a database that tracks practice question performance.
+
+Data collected:
+
+Question ID
+Question type
+Difficulty level
+Correct answer rate
+Recent appearance frequency
+User error patterns
+
+Use this data to:
+
+Identify high-frequency questions
+Detect difficult questions
+Recommend practice items
+
+The system should support weekly prediction lists showing commonly repeated or high-probability questions based on aggregated user data.
+
+------------------------------------------------
+
+TRAINING DATASET FOR SCORE PREDICTION
+
+Create dataset structure that records:
+
+User ID
+Listening accuracy
+Reading accuracy
+Writing AI score
+Speaking AI score
+Mock test results
+Practice frequency
+Study hours
+
+Use historical user performance to train prediction models that estimate exam readiness.
+
+Prediction model should update after each completed task.
+
+------------------------------------------------
+
+AI TUTOR SYSTEM
+
+Build an adaptive tutor that recommends what to study next.
+
+Tutor logic should analyze:
+
+Weak skills
+Recent mistakes
+Task completion history
+Score trends
+Confidence level
+
+Example tutor recommendations:
+
+"You should focus on speaking fluency today."
+
+"You made multiple grammar errors in writing essays. Review sentence structure."
+
+"Your listening accuracy improved this week. Try a harder listening task."
+
+Tutor should generate a dynamic daily study roadmap.
+
+------------------------------------------------
+
+PROGRESS ANALYTICS
+
+Charts showing:
+
+Skill improvement
+Study time
+Vocabulary growth
+Mock test comparison
+Speaking improvement
+Writing improvement
+
+------------------------------------------------
+
+ADMIN PANEL
+
+Admin dashboard
+
+Manage users
+Upload podcasts
+Add reading passages
+Create listening questions
+Add writing prompts
+Add speaking prompts
+Manage vocabulary
+Create mock tests
+
+View analytics.
+
+------------------------------------------------
+
+DATABASE TABLES
+
+Users
+Profiles
+Exam_goals
+Daily_tasks
+Podcasts
+Podcast_episodes
+Reading_passages
+Reading_questions
+Listening_questions
+Writing_prompts
+Writing_submissions
+Speaking_prompts
+Speaking_submissions
+Vocabulary_items
+Grammar_lessons
+Mock_tests
+Mock_attempts
+AI_feedback_reports
+Predicted_scores
+Study_plans
+Streak_logs
+Subscriptions
+Question_intelligence_data
+
+------------------------------------------------
+
+AI WORKFLOW
+
+User submits answer
+System stores response
+AI analyzes response
+Score generated
+Analytics updated
+Prediction recalculated
+AI tutor updates study recommendations
+Dashboard refreshed
+
+------------------------------------------------
+
+IMPORTANT RULES
+
+AI scores must be labeled as practice estimates.
+
+Do not claim guaranteed exam results.
+
+Prediction must show score ranges.
+
+Architecture must remain modular.
+
+------------------------------------------------
+
+PROJECT OUTPUT
+
+Generate:
+
+Full folder structure
+Database schema
+API routes
+React components
+Admin panel
+Documentation
+Deployment instructions
+PWA configuration
+React Native integration guide
+Android APK build instructions using Expo EAS
